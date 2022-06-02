@@ -1,0 +1,65 @@
+{
+  "name": "Hartslag",
+  "datapoints": [
+    {
+      "timestamp": "Jan",
+      "bpm": 65,
+      "stress": 80
+    },
+    {
+      "timestamp": "Feb",
+      "bpm": 56,
+      "stress": 65
+    },
+    {
+      "timestamp": "Mar",
+      "bpm": 84,
+      "stress": 91
+    },
+    {
+      "timestamp": "Apr",
+      "bpm": 75,
+      "stress": 83
+    },
+    {
+      "timestamp": "May",
+      "bpm": 45,
+      "stress": 30
+    },
+    {
+      "timestamp": "Jun",
+      "bpm": 69,
+      "stress": 83
+    },
+    {
+      "timestamp": "Jul",
+      "bpm": 65,
+      "stress": 80
+    },
+    {
+      "timestamp": "Aug",
+      "bpm": 56,
+      "stress": 65
+    },
+    {
+      "timestamp": "Sep",
+      "bpm": 84,
+      "stress": 91
+    },
+    {
+      "timestamp": "Oct",
+      "bpm": 75,
+      "stress": 83
+    },
+    {
+      "timestamp": "Nov",
+      "bpm": 45,
+      "stress": 30
+    },
+    {
+      "timestamp": "Dec",
+      "bpm": 69,
+      "stress": 83
+    }
+  ]
+}
