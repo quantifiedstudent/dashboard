@@ -1,29 +1,28 @@
-import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
-import {useState} from "react";
+import {Bar, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import CheckboxButtonContainer from "../CheckboxButton/CheckboxButtonContainer";
+import {useState} from "react";
 
-export interface TimeGraphProps {
+export interface MixedGraphProps {
     datapoints: { timestamp: string, bpm: number, stress: number }[];
 }
 
-function TimeGraph(props: TimeGraphProps) {
-
+function MixedGraph(props: MixedGraphProps) {
     const [dataKeys, setDataKeys] = useState(['bpm', 'stress', 'sleep', 'datakey', 'datakey']);
 
     return <div>
         <CheckboxButtonContainer buttons={dataKeys}/>
         <ResponsiveContainer width={"50%"} height={300}>
-            <LineChart data={props.datapoints}>
-                <Line type="monotone" dataKey="bpm" stroke="#0374b5"/>
-                <Line type="monotone" dataKey="stress" stroke="#663366"/>
-                <XAxis dataKey="timestamp"/>
+            <ComposedChart width={730} height={250} data={props.datapoints}>
+                <XAxis dataKey="name"/>
                 <YAxis/>
                 <Tooltip/>
                 <Legend/>
                 <CartesianGrid stroke="#f5f5f5"/>
-            </LineChart>
+                <Bar dataKey="bpm" barSize={20} fill="#0374b5"/>
+                <Line type="monotone" dataKey="stress" stroke="#663366"/>
+            </ComposedChart>
         </ResponsiveContainer>
     </div>
 }
 
-export default TimeGraph;
+export default MixedGraph;

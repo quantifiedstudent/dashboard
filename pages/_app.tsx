@@ -5,7 +5,10 @@ import Header from "../components/shared/Header";
 function MyApp({Component, pageProps}: AppProps) {
     return <div>
         <Header/>
-        <Component {...pageProps} />
+        <div style={{marginTop: '140px'}}>
+            <Component {...pageProps} />
+        </div>
+
     </div>
 }
 
