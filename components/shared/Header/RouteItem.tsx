@@ -15,9 +15,7 @@ export default function RouteItem(props: RouteItemProps) {
         if (typeof window !== "undefined") {
             pathname = window.location.pathname;
         }
-        if (pathname === '/' && props.name === 'Home')
-            return styles.selectedItem;
-        else if (pathname.includes(props.href) && props.name !== 'Home')
+        if (pathname.includes(props.href))
             return styles.selectedItem;
         else
             return styles.item;

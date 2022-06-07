@@ -1,15 +1,15 @@
 import styles from './CheckboxButton.module.css';
-import {useState} from "react";
 
 export interface CheckboxButtonProps {
     name: string;
+    selected: boolean;
+    setSelected: Function;
 }
 
 function CheckboxButton(props: CheckboxButtonProps) {
-    const [isSelected, setIsSelected] = useState(false);
-    const className = isSelected ? styles.buttonSelected : styles.button;
+    const className = props.selected ? styles.buttonSelected : styles.button;
 
-    return <button onClick={() => setIsSelected(!isSelected)} className={className}>
+    return <button onClick={() => props.setSelected(props.name)} className={className}>
         {props.name}
     </button>
 }

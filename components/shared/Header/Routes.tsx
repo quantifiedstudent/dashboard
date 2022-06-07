@@ -9,7 +9,7 @@ import {BsWifi} from "react-icons/bs";
 const RouteItems = [
     {
         name: "Home",
-        href: "/",
+        href: "/home",
         icon: <MdHome/>
     },
     {

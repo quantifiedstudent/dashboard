@@ -1,18 +1,27 @@
 import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import CheckboxButtonContainer from "../CheckboxButton/CheckboxButtonContainer";
+import styles from "../Global.module.css";
+import {getWatchDataKeys} from "../../../statemanagement/global/global.selectors";
+import {connect} from "react-redux";
+
 
 export interface TimeGraphProps {
     datapoints: { timestamp: string, bpm: number, stress: number }[];
+    dataKeys: any[];
 }
 
 function TimeGraph(props: TimeGraphProps) {
 
-    const [dataKeys, setDataKeys] = useState(['bpm', 'stress', 'sleep', 'datakey', 'datakey']);
+    const [dataKeys, setDataKeys] = useState([{}]);
 
-    return <div>
-        <CheckboxButtonContainer buttons={dataKeys}/>
-        <ResponsiveContainer width={"50%"} height={300}>
+    useEffect(() => {
+        setDataKeys(props.dataKeys)
+    }, [props]);
+
+    return <div className={styles.bigGraphWrapper}>
+        <CheckboxButtonContainer dataKeys={props.dataKeys}/>
+        <ResponsiveContainer height={300}>
             <LineChart data={props.datapoints}>
                 <Line type="monotone" dataKey="bpm" stroke="#0374b5"/>
                 <Line type="monotone" dataKey="stress" stroke="#663366"/>
@@ -26,4 +35,10 @@ function TimeGraph(props: TimeGraphProps) {
     </div>
 }
 
-export default TimeGraph;
+const mapStateToProps = (state: any) => {
+    return {
+        dataKeys: getWatchDataKeys(state)
+    };
+};
+
+export default connect(mapStateToProps)(TimeGraph);
