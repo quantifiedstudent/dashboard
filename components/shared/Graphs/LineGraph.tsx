@@ -4,15 +4,37 @@ import {getWatchDataKeys} from "../../../statemanagement/global/global.selectors
 import {connect} from "react-redux";
 import {GraphProps} from "../../../interfaces/props";
 import {dataKey} from "../../../interfaces/data";
-import CheckboxButtons from "../CheckboxButton/CheckboxButtons";
 import Chart from "react-apexcharts";
+import {ApexOptions} from "apexcharts";
 
-const options = {
+const options: ApexOptions = {
     chart: {
-        id: "basic-bar"
+        id: "basic-line",
+        zoom: {
+            type: 'x',
+            enabled: true,
+            autoScaleYaxis: true
+        },
+        toolbar: {
+            autoSelected: 'zoom'
+        },
+    },
+    title: {
+        text: 'Heartrate Correlated to Stress',
+        align: 'left'
     },
     xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+        categories: [
+            new Date('2019-02-27').toDateString(),
+            new Date('2019-03-01').toDateString(),
+            new Date('2019-03-02').toDateString(),
+            new Date('2019-03-04').toDateString(),
+            new Date('2019-03-05').toDateString(),
+            new Date('2019-03-06').toDateString(),
+            new Date('2019-03-07').toDateString(),
+            new Date('2019-03-08').toDateString(),
+        ],
+        type: 'datetime'
     }
 }
 const series = [
@@ -26,7 +48,7 @@ const series = [
     }
 ]
 
-function TimeGraph(props: GraphProps) {
+function LineGraph(props: GraphProps) {
     const [dataKeys, setDataKeys] = useState<dataKey[]>([]);
 
     useEffect(() => {
@@ -34,12 +56,12 @@ function TimeGraph(props: GraphProps) {
     }, [props]);
 
     return <div className={styles.bigGraphWrapper}>
-        <CheckboxButtons dataKeys={dataKeys}/>
         <Chart
             options={options}
             series={series}
             type="line"
-            width="500"
+            width="1000"
+            height="400"
         />
     </div>
 }
@@ -50,4 +72,4 @@ const mapStateToProps = (state: any) => {
     };
 };
 
-export default connect(mapStateToProps)(TimeGraph);
+export default connect(mapStateToProps)(LineGraph);
