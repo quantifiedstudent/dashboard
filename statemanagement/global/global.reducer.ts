@@ -1,10 +1,11 @@
 import {Actions} from "./global.actions";
 
 const initialState = {
-    watchDataKeys: [{name: 'bpm', selected: false}, {name: 'stress', selected: false}, {
-        name: 'sleep',
-        selected: false
-    }],
+    watchDataKeys: [
+        {name: 'bpm', selected: false},
+        {name: 'stress', selected: false},
+        {name: 'sleep', selected: false}
+    ],
 }
 
 export default function globalReducer(state = initialState, action: any) {
