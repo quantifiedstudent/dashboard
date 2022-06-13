@@ -1,4 +1,4 @@
-import styles from "../Global.module.css";
+import styles from "../Shared.module.css";
 import Chart from "react-apexcharts";
 import {ApexOptions} from "apexcharts";
 
@@ -8,50 +8,50 @@ const series = [
             {
                 x: 'Monday',
                 y: [
-                    new Date(2020, 12, 2, 2).getHours(),
-                    new Date(2020, 12, 2, 11).getHours(),
+                    new Date(2020, 12, 2, 2).getTime(),
+                    new Date(2020, 12, 2, 10).getTime(),
                 ]
             },
             {
                 x: 'Tuesday',
                 y: [
-                    new Date(2020, 12, 3, 3).getHours(),
-                    new Date(2020, 12, 3, 11).getHours(),
+                    new Date(2020, 12, 3, 3).getTime(),
+                    new Date(2020, 12, 3, 11).getTime(),
                 ]
             },
             {
                 x: 'Wednesday',
                 y: [
-                    new Date(2020, 12, 4, 4).getHours(),
-                    new Date(2020, 12, 4, 13).getHours(),
+                    new Date(2020, 12, 4, 4).getTime(),
+                    new Date(2020, 12, 4, 13).getTime(),
                 ]
             },
             {
                 x: 'Thursday',
                 y: [
-                    new Date(2020, 12, 5, 4).getHours(),
-                    new Date(2020, 12, 5, 12).getHours()
+                    new Date(2020, 12, 5, 1).getTime(),
+                    new Date(2020, 12, 5, 10).getTime()
                 ]
             },
             {
                 x: 'Friday',
                 y: [
-                    new Date(2020, 12, 6, 4).getHours(),
-                    new Date(2020, 12, 6, 12).getHours()
+                    new Date(2020, 12, 6, 4).getTime(),
+                    new Date(2020, 12, 6, 13).getTime()
                 ]
             },
             {
                 x: 'Saturday',
                 y: [
-                    new Date(2020, 12, 7, 4).getHours(),
-                    new Date(2020, 12, 7, 12).getHours()
+                    new Date(2020, 12, 7, 6).getTime(),
+                    new Date(2020, 12, 7, 14).getTime()
                 ]
             },
             {
                 x: 'Sunday',
                 y: [
-                    new Date(2020, 12, 8, 4).getHours(),
-                    new Date(2020, 12, 8, 12).getHours()
+                    new Date(2020, 12, 8, 2).getTime(),
+                    new Date(2020, 12, 8, 10).getTime(),
                 ]
             }
         ]

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import styles from "../Global.module.css";
+import styles from "../Shared.module.css";
 import {getWatchDataKeys} from "../../../statemanagement/global/global.selectors";
 import {connect} from "react-redux";
 import {GraphProps} from "../../../interfaces/props";
