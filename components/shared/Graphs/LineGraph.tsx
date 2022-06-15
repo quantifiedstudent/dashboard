@@ -25,14 +25,14 @@ const options: ApexOptions = {
     },
     xaxis: {
         categories: [
-            new Date('2019-02-27').toDateString(),
-            new Date('2019-03-01').toDateString(),
-            new Date('2019-03-02').toDateString(),
-            new Date('2019-03-04').toDateString(),
-            new Date('2019-03-05').toDateString(),
-            new Date('2019-03-06').toDateString(),
-            new Date('2019-03-07').toDateString(),
-            new Date('2019-03-08').toDateString(),
+            new Date('2019-02-28').getTime(),
+            new Date('2019-03-01').getTime(),
+            new Date('2019-03-02').getTime(),
+            new Date('2019-03-03').getTime(),
+            new Date('2019-03-04').getTime(),
+            new Date('2019-03-05').getTime(),
+            new Date('2019-03-06').getTime(),
+            new Date('2019-03-07').getTime(),
         ],
         type: 'datetime'
     }

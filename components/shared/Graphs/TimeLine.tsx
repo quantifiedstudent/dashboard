@@ -1,6 +1,7 @@
 import styles from "../Shared.module.css";
 import Chart from "react-apexcharts";
 import {ApexOptions} from "apexcharts";
+import moment from "moment";
 
 const series = [
     {
@@ -24,6 +25,13 @@ const series = [
                 y: [
                     new Date(2020, 12, 4, 4).getTime(),
                     new Date(2020, 12, 4, 13).getTime(),
+                ]
+            },
+            {
+                x: 'Wednesday',
+                y: [
+                    new Date(2020, 12, 4, 14).getTime(),
+                    new Date(2020, 12, 4, 15).getTime(),
                 ]
             },
             {
@@ -68,12 +76,27 @@ const options: ApexOptions = {
             horizontal: true
         }
     },
+    dataLabels: {
+        enabled: true,
+        formatter: val => {
+            return "Test";
+        }
+    },
     xaxis: {
         type: 'datetime'
     },
     title: {
         text: 'Sleep this week'
+    },
+    tooltip: {
+        x: {
+            formatter: (val) => moment(new Date(val)).format('HH:mm'),
+            title: {
+                formatter: (seriesName) => seriesName,
+            }
+        }
     }
+
 }
 export default function TimeLine() {
 
