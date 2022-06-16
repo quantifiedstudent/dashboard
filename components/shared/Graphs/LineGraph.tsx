@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
 import styles from "../Shared.module.css";
-import {getWatchDataKeys} from "../../../statemanagement/global/global.selectors";
-import {connect} from "react-redux";
 import {GraphProps} from "../../../interfaces/props";
 import {dataKey} from "../../../interfaces/data";
 import Chart from "react-apexcharts";
 import {ApexOptions} from "apexcharts";
+import moment from "moment";
 
 const options: ApexOptions = {
     chart: {
@@ -25,14 +24,14 @@ const options: ApexOptions = {
     },
     xaxis: {
         categories: [
-            new Date('2019-02-28').getTime(),
-            new Date('2019-03-01').getTime(),
-            new Date('2019-03-02').getTime(),
-            new Date('2019-03-03').getTime(),
-            new Date('2019-03-04').getTime(),
-            new Date('2019-03-05').getTime(),
-            new Date('2019-03-06').getTime(),
-            new Date('2019-03-07').getTime(),
+            moment(new Date('2019-03-01')).format(),
+            moment(new Date('2019-03-02')).format(),
+            moment(new Date('2019-03-03')).format(),
+            moment(new Date('2019-03-04')).format(),
+            moment(new Date('2019-03-05')).format(),
+            moment(new Date('2019-03-06')).format(),
+            moment(new Date('2019-03-07')).format(),
+            moment(new Date('2019-03-08')).format(),
         ],
         type: 'datetime'
     }
@@ -66,10 +65,4 @@ function LineGraph(props: GraphProps) {
     </div>
 }
 
-const mapStateToProps = (state: any) => {
-    return {
-        dataKeys: getWatchDataKeys(state)
-    };
-};
-
-export default connect(mapStateToProps)(LineGraph);
+export default LineGraph;

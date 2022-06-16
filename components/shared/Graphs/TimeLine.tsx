@@ -91,8 +91,9 @@ const options: ApexOptions = {
     tooltip: {
         x: {
             formatter: (val) => moment(new Date(val)).format('HH:mm'),
+            //@ts-ignore
             title: {
-                formatter: (seriesName) => seriesName,
+                formatter: (seriesName: string) => seriesName,
             }
         }
     }
