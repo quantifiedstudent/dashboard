@@ -1,7 +1,7 @@
-import styles from "../Shared.module.css";
-import Chart from "react-apexcharts";
+import styles from './PerformanceGraph.module.css'
 import {ApexOptions} from "apexcharts";
 import moment from "moment";
+import Chart from "react-apexcharts";
 
 const options: ApexOptions = {
     chart: {
@@ -17,8 +17,11 @@ const options: ApexOptions = {
         },
     },
     title: {
-        text: 'Heartrate Correlated to Stress',
-        align: 'left'
+        text: 'Overall Performance',
+        align: 'left',
+        style: {
+            fontSize: '20px'
+        }
     },
     xaxis: {
         categories: [
@@ -36,18 +39,15 @@ const options: ApexOptions = {
 }
 const series = [
     {
-        name: "Heartrate",
+        name: "Performance",
         data: [30, 40, 45, 50, 49, 60, 70, 91]
     },
-    {
-        name: "Stress",
-        data: [52, 12, 57, 12, 86, 42, 32, 34]
-    }
 ]
 
-function LineGraph() {
-    return <div className={styles.bigGraphWrapper}>
+export default function PerformanceGraph() {
+    return <div>
         <Chart
+            className={styles.container}
             options={options}
             series={series}
             type="line"
@@ -55,5 +55,3 @@ function LineGraph() {
         />
     </div>
 }
-
-export default LineGraph;

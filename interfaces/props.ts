@@ -1,17 +1,12 @@
-import {dataKey, dataPoint} from "./data";
-
-export interface CheckboxButtonProps {
-    name: string;
-    selected: boolean;
-    setSelected: Function;
-}
-
-export interface CheckboxButtonContainerProps {
-    dataKeys: dataKey[];
-    dispatch: Function;
-}
+import {dataPoint} from "./data";
 
 export interface GraphProps {
     datapoints: dataPoint[];
     dataKeys: any[];
+}
+
+export interface InfoTabProps {
+    title: string;
+    time: number;
+    unit: string;
 }

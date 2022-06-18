@@ -1,8 +1,13 @@
 import {NextPage} from "next";
 import styles from "../../styles/Home.module.css";
 import Head from "next/head";
+import Welcome from "../../components/home/welcome";
+import InfoTab from "../../components/home/infotab";
+import PerformanceGraph from "../../components/home/performancegraph";
+import CanvasInfo from "../../components/home/canvasinfo";
+import {Grid} from "@mui/material";
 
-const Wifi: NextPage = () => {
+const Home: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
@@ -10,15 +15,33 @@ const Wifi: NextPage = () => {
                 <meta name="description" content="Quantified Student Dashboard"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
+            <div className={styles.homeContainer}>
+                <div className={styles.gridContainer}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                            <Welcome/>
+                        </Grid>
 
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    Home
-                </h1>
-            </main>
-
+                        <Grid item xs={12}>
+                            <PerformanceGraph/>
+                        </Grid>
+                    </Grid>
+                </div>
+                <div className={styles.gridContainer}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                            <CanvasInfo/>
+                        </Grid>
+                    </Grid>
+                    <div className={styles.gridContainer}>
+                        <InfoTab title={"Average Screen Time"} time={2.45} unit={'h'}/>
+                        <InfoTab title={"Average Heart Rate"} time={86} unit={'BPM'}/>
+                        <InfoTab title={"Average Sleep Time"} time={7.45} unit={'h'}/>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
 
-export default Wifi;
+export default Home;

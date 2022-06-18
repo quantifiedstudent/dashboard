@@ -69,7 +69,8 @@ const series = [
 const options: ApexOptions = {
     chart: {
         height: 350,
-        type: 'rangeBar'
+        type: 'rangeBar',
+        width: '100%',
     },
     plotOptions: {
         bar: {
@@ -106,7 +107,6 @@ export default function TimeLine() {
             options={options}
             series={series}
             type="rangeBar"
-            width="1000"
             height="400"
         />
     </div>
