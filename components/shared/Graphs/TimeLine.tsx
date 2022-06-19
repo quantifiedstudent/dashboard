@@ -19,7 +19,7 @@ export default function TimeLine(props: TimeLineProps) {
         dataLabels: {
             enabled: true,
             formatter: val => {
-                return "Test";
+                return "8hrs";
             }
         },
         xaxis: {
