@@ -1,12 +1,13 @@
 import {NextPage} from "next";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/Global.module.css";
 import Head from "next/head";
-import TimeGraph from "../../components/shared/Graphs/LineGraph"
+import LineGraph from "../../components/shared/Graphs/LineGraph"
 import TimeLine from "../../components/shared/Graphs/TimeLine";
+import {HeartRateStressMockData as lineData, SleepTimeLineMockData as sleepData} from "../../mockdata/GraphMockdata";
 
 const Smartwatch: NextPage = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles.flexContainer}>
             <Head>
                 <title>QS Dashboard</title>
                 <meta name="description" content="Quantified Student Dashboard"/>
@@ -14,8 +15,11 @@ const Smartwatch: NextPage = () => {
             </Head>
 
             <div className={styles.gridContainer}>
-                <TimeGraph/>
-                <TimeLine/>
+                <LineGraph className={styles.bigGraphWrapper} moments={lineData.moments} series={lineData.series}
+                           title={lineData.title}/>
+            </div>
+            <div className={styles.gridContainer}>
+                <TimeLine title={sleepData.title} series={sleepData.series} className={styles.bigGraphWrapper}/>
             </div>
 
         </div>

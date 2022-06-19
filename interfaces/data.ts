@@ -1,10 +1,14 @@
-export interface dataKey {
+export interface dataSeries {
     name: string,
-    selected: boolean
+    data: any[],
 }
 
 export interface dataPoint {
-    timestamp: string,
-    bpm: number,
-    stress: number
+    x: string,
+    y: any[]
 }
+
+export interface seriesData {
+    data: dataPoint[]
+}
+

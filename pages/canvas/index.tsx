@@ -1,5 +1,5 @@
 import {NextPage} from "next";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/Global.module.css";
 import Head from "next/head";
 
 const Canvas: NextPage = () => {

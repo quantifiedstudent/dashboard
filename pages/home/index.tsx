@@ -1,5 +1,5 @@
 import {NextPage} from "next";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/Global.module.css";
 import Head from "next/head";
 import Welcome from "../../components/home/welcome";
 import InfoTab from "../../components/home/infotab";
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
                 <meta name="description" content="Quantified Student Dashboard"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className={styles.homeContainer}>
+            <div className={styles.flexContainer}>
                 <div className={styles.gridContainer}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
