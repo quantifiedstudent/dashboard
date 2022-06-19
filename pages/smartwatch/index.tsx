@@ -7,21 +7,21 @@ import {HeartRateStressMockData as lineData, SleepTimeLineMockData as sleepData}
 
 const Smartwatch: NextPage = () => {
     return (
-        <div className={styles.flexContainer}>
+        <div className={styles.container}>
             <Head>
                 <title>QS Dashboard</title>
                 <meta name="description" content="Quantified Student Dashboard"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-
-            <div className={styles.gridContainer}>
-                <LineGraph className={styles.bigGraphWrapper} moments={lineData.moments} series={lineData.series}
-                           title={lineData.title}/>
+            <div className={styles.flexContainer}>
+                <div className={styles.gridContainer}>
+                    <LineGraph className={styles.bigGraphWrapper} moments={lineData.moments} series={lineData.series}
+                               title={lineData.title}/>
+                </div>
+                <div className={styles.gridContainer}>
+                    <TimeLine title={sleepData.title} series={sleepData.series} className={styles.bigGraphWrapper}/>
+                </div>
             </div>
-            <div className={styles.gridContainer}>
-                <TimeLine title={sleepData.title} series={sleepData.series} className={styles.bigGraphWrapper}/>
-            </div>
-
         </div>
     )
 }
