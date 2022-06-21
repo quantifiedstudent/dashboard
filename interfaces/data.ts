@@ -1,14 +1,14 @@
-export interface dataSeries {
+export interface DataSeries {
     name: string,
     data: any[],
 }
 
-export interface dataPoint {
+export interface DataPoint {
     x: string,
     y: any[]
 }
 
-export interface seriesData {
-    data: dataPoint[]
+export interface SeriesData {
+    data: DataPoint[]
 }
 
