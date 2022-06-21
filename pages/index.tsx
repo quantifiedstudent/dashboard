@@ -1,17 +1,10 @@
 import {Button, TextField} from '@mui/material'
 import type {NextPage} from 'next'
-import Head from 'next/head'
 import styles from '../styles/Global.module.css'
 
 const Login: NextPage = () => {
     return (
         <div className={styles.container}>
-            <Head>
-                <title>QS Dashboard</title>
-                <meta name="description" content="Quantified Student Dashboard"/>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
-
             <div className={styles.main}>
                 <h1 className={styles.title}>
                     Welcome to QS
@@ -25,4 +18,4 @@ const Login: NextPage = () => {
     )
 }
 
-export default Login
+export default Login;

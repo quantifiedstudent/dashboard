@@ -1,6 +1,5 @@
 import {NextPage} from "next";
 import styles from "../../styles/Global.module.css";
-import Head from "next/head";
 import Welcome from "../../components/home/welcome";
 import InfoTab from "../../components/home/infotab";
 import PerformanceGraph from "../../components/home/performancegraph";
@@ -10,11 +9,6 @@ import {Grid} from "@mui/material";
 const Home: NextPage = () => {
     return (
         <div className={styles.container}>
-            <Head>
-                <title>QS Dashboard</title>
-                <meta name="description" content="Quantified Student Dashboard"/>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
             <div className={styles.flexContainer}>
                 <div className={styles.gridContainer}>
                     <Grid container spacing={2}>
