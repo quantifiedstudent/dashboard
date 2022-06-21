@@ -8,6 +8,11 @@ export interface DataPoint {
     y: any[]
 }
 
+export interface LineGraphData {
+    title: string;
+    series: DataSeries[]
+    moments: any[],
+}
 export interface SeriesData {
     data: DataPoint[]
 }
