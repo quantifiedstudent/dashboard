@@ -9,8 +9,8 @@ export function CreateSeries(data: WatchData) : DataSeries{
     return series;
 }
 
-export function CreateMoments(data: ApiDataPoint[]): any[] {
-    let moments: any[] = [];
+export function CreateMoments(data: ApiDataPoint[]): string[] {
+    let moments: string[] = [];
     data.map((datapoint: ApiDataPoint) => {
         moments.push(moment.unix(datapoint.timestamp).format("MM/DD/YYYY"));
     });

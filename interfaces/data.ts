@@ -11,7 +11,7 @@ export interface DataPoint {
 export interface LineGraphData {
     title: string;
     series: DataSeries[]
-    moments: any[],
+    moments: string[],
 }
 
 export interface SeriesData {
