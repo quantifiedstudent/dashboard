@@ -11,7 +11,7 @@ export const client = new ApolloClient({
     cache: new InMemoryCache()
 });
 
-export const WATCHDATA = gql`
+export const BIOMETRICS = gql`
     query GetWatchData {
         WatchData {
             HeartRateData {

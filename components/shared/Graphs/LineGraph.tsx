@@ -29,7 +29,6 @@ function LineGraph(props: LineGraphProps) {
         tooltip: {
             x: {
                 formatter: (val) => moment(new Date(val)).format('MMM'),
-                //@ts-ignore
                 title: {
                     formatter: (seriesName: string) => seriesName,
                 }

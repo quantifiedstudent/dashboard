@@ -1,7 +1,7 @@
-import {ApiDataPoint, ApiWatchData, DataSeries, LineGraphData, WatchData} from "../interfaces/data";
+import {ApiDataPoint, ApiWatchData, DataSeries, LineGraphData, WatchData} from "../../interfaces/data";
 import moment from "moment";
 
-export function CreateSeries(data: WatchData) : DataSeries{
+function CreateSeries(data: WatchData) : DataSeries{
     let series: DataSeries = {name:'', data: []};series.name = data.name;
     data.datapoints.map((datapoint: { value: number, timestamp: string }) => {
         series.data.push(datapoint.value)
@@ -9,7 +9,7 @@ export function CreateSeries(data: WatchData) : DataSeries{
     return series;
 }
 
-export function CreateMoments(data: ApiDataPoint[]): string[] {
+function CreateMoments(data: ApiDataPoint[]): string[] {
     let moments: string[] = [];
     data.map((datapoint: ApiDataPoint) => {
         moments.push(moment.unix(datapoint.timestamp).format("MM/DD/YYYY"));
@@ -17,7 +17,7 @@ export function CreateMoments(data: ApiDataPoint[]): string[] {
     return moments;
 }
 
-export function CreateWatchData(data: ApiWatchData): LineGraphData {
+export default function CreateWatchData(data: ApiWatchData): LineGraphData {
     let exportData: LineGraphData = {title: '', series: [], moments: []};
 
     exportData.title = data.WatchData.HeartRateData.name + ' compared to ' + data.WatchData.StressData.name;
