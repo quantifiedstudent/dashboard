@@ -7,9 +7,10 @@ import {
 } from "@apollo/client";
 
 export const client = new ApolloClient({
-    uri: 'http://localhost:4000/graphql',
+    uri: process.env.NEXT_PUBLIC_ENV_SERVER,
     cache: new InMemoryCache()
 });
+
 export const WATCHDATA = gql`
     query GetWatchData {
         WatchData {

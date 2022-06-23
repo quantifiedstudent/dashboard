@@ -13,7 +13,24 @@ export interface LineGraphData {
     series: DataSeries[]
     moments: any[],
 }
+
 export interface SeriesData {
     data: DataPoint[]
 }
 
+export interface WatchData {
+    name: string,
+    datapoints: []
+}
+
+export interface ApiDataPoint {
+    value: number,
+    timestamp: number
+}
+
+export interface ApiWatchData {
+    WatchData: {
+        HeartRateData: WatchData,
+        StressData: WatchData
+    },
+}
