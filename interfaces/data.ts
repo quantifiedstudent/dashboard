@@ -8,7 +8,29 @@ export interface DataPoint {
     y: any[]
 }
 
+export interface LineGraphData {
+    title: string;
+    series: DataSeries[]
+    moments: string[],
+}
+
 export interface SeriesData {
     data: DataPoint[]
 }
 
+export interface WatchData {
+    name: string,
+    datapoints: []
+}
+
+export interface ApiDataPoint {
+    value: number,
+    timestamp: number
+}
+
+export interface ApiWatchData {
+    WatchData: {
+        HeartRateData: WatchData,
+        StressData: WatchData
+    },
+}

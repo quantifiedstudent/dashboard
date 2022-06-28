@@ -1,6 +1,7 @@
 import Chart from "react-apexcharts";
 import {ApexOptions} from "apexcharts";
 import {LineGraphProps} from "../../../interfaces/props";
+import moment from "moment";
 
 function LineGraph(props: LineGraphProps) {
 
@@ -18,19 +19,27 @@ function LineGraph(props: LineGraphProps) {
             },
         },
         title: {
-            text: props.title,
+            text: props.lineGraphData.title,
             align: 'left'
         },
         xaxis: {
-            categories: props.moments,
+            categories: props.lineGraphData.moments,
             type: 'datetime'
+        },
+        tooltip: {
+            x: {
+                formatter: (val) => moment(new Date(val)).format('MMM'),
+                title: {
+                    formatter: (seriesName: string) => seriesName,
+                }
+            }
         }
     }
 
     return <div className={props.className}>
         <Chart
             options={options}
-            series={props.series}
+            series={props.lineGraphData.series}
             type="line"
             height="400"
         />

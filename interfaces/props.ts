@@ -1,4 +1,4 @@
-import {DataSeries, SeriesData} from "./data";
+import {DataSeries, LineGraphData, SeriesData} from "./data";
 
 export interface InfoTabProps {
     title: string;
@@ -7,9 +7,7 @@ export interface InfoTabProps {
 }
 
 export interface LineGraphProps {
-    title: string;
-    series: DataSeries[]
-    moments: any[],
+    lineGraphData: LineGraphData,
     className: string
 }
 
